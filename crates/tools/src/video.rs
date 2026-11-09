@@ -238,7 +238,7 @@ fn info_file() -> PathBuf {
 /// Without them (#229) a page that wants a sign-in, YouTube's "confirm you're not a bot", was
 /// refused here although the video window's look-up, which had them, had listed its qualities.
 fn look_up(exe: &Path, url: &str, browser: &[String]) -> Result<(serde_json::Value, bool), String> {
-    let mut args: Vec<String> = ["-J", "--no-playlist", "--no-warnings"]
+    let mut args: Vec<String> = ["-J", "--no-check-formats", "--no-playlist", "--no-warnings"]
         .map(String::from)
         .to_vec();
     args.extend(browser.iter().cloned());
