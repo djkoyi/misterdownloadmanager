@@ -235,6 +235,7 @@ pub fn parse_looked(json: &[u8]) -> Option<Looked> {
 pub fn look_up(exe: &Path, url: &str, browser: &proc::FromBrowser) -> Result<Looked, ProcError> {
     let mut args: Vec<String> = [
         "-J",
+        "--no-check-formats",
         "--no-playlist",
         "--flat-playlist",
         "--playlist-items",
